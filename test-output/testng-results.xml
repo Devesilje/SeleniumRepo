@@ -1,81 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="2" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-06-10T21:36:04 CEST" name="Default suite" finished-at="2021-06-10T21:37:15 CEST" duration-ms="70597">
+  <suite started-at="2021-06-11T22:08:05 CEST" name="Default suite" finished-at="2021-06-11T22:08:59 CEST" duration-ms="54608">
     <groups>
     </groups>
-    <test started-at="2021-06-10T21:36:04 CEST" name="Default test" finished-at="2021-06-10T21:37:15 CEST" duration-ms="70597">
-      <class name="tests.LogInTests">
-        <test-method is-config="true" signature="beforeTests()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:04 CEST" name="beforeTests" finished-at="2021-06-10T21:36:09 CEST" duration-ms="4378" status="PASS">
+    <test started-at="2021-06-11T22:08:05 CEST" name="Default test" finished-at="2021-06-11T22:08:59 CEST" duration-ms="54608">
+      <class name="tests.MyAddresses">
+        <test-method is-config="true" signature="beforeTests()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:05 CEST" name="beforeTests" finished-at="2021-06-11T22:08:08 CEST" duration-ms="3552" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTests -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:09 CEST" name="beforeTest" finished-at="2021-06-10T21:36:14 CEST" duration-ms="4951" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:08 CEST" name="beforeTest" finished-at="2021-06-11T22:08:19 CEST" duration-ms="10988" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="logInValidCredentials()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:14 CEST" name="logInValidCredentials" finished-at="2021-06-10T21:36:19 CEST" duration-ms="5338" status="PASS">
+        <test-method signature="updateAddressValidInput()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:19 CEST" name="updateAddressValidInput" finished-at="2021-06-11T22:08:24 CEST" duration-ms="4313" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logInValidCredentials -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:19 CEST" name="afterTest" finished-at="2021-06-10T21:36:20 CEST" duration-ms="1239" status="PASS">
+        </test-method> <!-- updateAddressValidInput -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:24 CEST" name="afterTest" finished-at="2021-06-11T22:08:25 CEST" duration-ms="1503" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:20 CEST" name="beforeTest" finished-at="2021-06-10T21:36:22 CEST" duration-ms="1412" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:25 CEST" name="beforeTest" finished-at="2021-06-11T22:08:30 CEST" duration-ms="4630" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="logInInvalidEmailCredentials()[pri:1, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:22 CEST" name="logInInvalidEmailCredentials" finished-at="2021-06-10T21:36:26 CEST" duration-ms="4338" status="PASS">
+        <test-method signature="updateAddressInvalidInputSpecialCharacters()[pri:1, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:30 CEST" name="updateAddressInvalidInputSpecialCharacters" finished-at="2021-06-11T22:08:34 CEST" duration-ms="4391" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [MAIN STREET] but found [++++++]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [MAIN STREET] but found [++++++]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:629)
+at org.testng.Assert.assertEquals(Assert.java:639)
+at tests.MyAddresses.updateAddressInvalidInputSpecialCharacters(MyAddresses.java:42)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logInInvalidEmailCredentials -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:26 CEST" name="afterTest" finished-at="2021-06-10T21:36:29 CEST" duration-ms="2765" status="PASS">
+        </test-method> <!-- updateAddressInvalidInputSpecialCharacters -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:34 CEST" name="afterTest" finished-at="2021-06-11T22:08:36 CEST" duration-ms="1435" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:29 CEST" name="beforeTest" finished-at="2021-06-10T21:36:31 CEST" duration-ms="2197" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:36 CEST" name="beforeTest" finished-at="2021-06-11T22:08:41 CEST" duration-ms="5602" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="logInInvalidPasswordCredentials()[pri:2, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:31 CEST" name="logInInvalidPasswordCredentials" finished-at="2021-06-10T21:36:36 CEST" duration-ms="4640" status="PASS">
+        <test-method signature="updateAddressInvalidInputSpace()[pri:2, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:41 CEST" name="updateAddressInvalidInputSpace" finished-at="2021-06-11T22:08:45 CEST" duration-ms="3849" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [MAIN STREET] but found []]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [MAIN STREET] but found []
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:629)
+at org.testng.Assert.assertEquals(Assert.java:639)
+at tests.MyAddresses.updateAddressInvalidInputSpace(MyAddresses.java:53)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logInInvalidPasswordCredentials -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:36 CEST" name="afterTest" finished-at="2021-06-10T21:36:39 CEST" duration-ms="3511" status="PASS">
+        </test-method> <!-- updateAddressInvalidInputSpace -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:45 CEST" name="afterTest" finished-at="2021-06-11T22:08:47 CEST" duration-ms="1598" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:39 CEST" name="beforeTest" finished-at="2021-06-10T21:36:44 CEST" duration-ms="4626" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:47 CEST" name="beforeTest" finished-at="2021-06-11T22:08:52 CEST" duration-ms="5150" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="logInEmptyCredentials()[pri:3, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:44 CEST" name="logInEmptyCredentials" finished-at="2021-06-10T21:36:48 CEST" duration-ms="4579" status="PASS">
+        <test-method signature="updateAddressEmptyField()[pri:3, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:52 CEST" name="updateAddressEmptyField" finished-at="2021-06-11T22:08:55 CEST" duration-ms="3384" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logInEmptyCredentials -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:48 CEST" name="afterTest" finished-at="2021-06-10T21:36:51 CEST" duration-ms="2982" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:51 CEST" name="beforeTest" finished-at="2021-06-10T21:36:55 CEST" duration-ms="3378" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method signature="logOut()[pri:4, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:36:55 CEST" name="logOut" finished-at="2021-06-10T21:37:09 CEST" duration-ms="14262" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logOut -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:37:09 CEST" name="afterTest" finished-at="2021-06-10T21:37:14 CEST" duration-ms="5529" status="PASS">
+        </test-method> <!-- updateAddressEmptyField -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:55 CEST" name="afterTest" finished-at="2021-06-11T22:08:59 CEST" duration-ms="3854" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterTests()[pri:0, instance:tests.LogInTests@13e39c73]" started-at="2021-06-10T21:37:14 CEST" name="afterTests" finished-at="2021-06-10T21:37:15 CEST" duration-ms="401" status="PASS">
+        <test-method is-config="true" signature="afterTests()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:59 CEST" name="afterTests" finished-at="2021-06-11T22:08:59 CEST" duration-ms="298" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTests -->
-      </class> <!-- tests.LogInTests -->
+      </class> <!-- tests.MyAddresses -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

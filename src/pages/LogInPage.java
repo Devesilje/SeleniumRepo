@@ -12,8 +12,17 @@ public class LogInPage {
 	WebElement signInButton;
 	WebElement invalidEmailLabel;
 	WebElement invalidPasswordLabel;
-	WebElement emptyFieldsLabel;
+	WebElement emptyEmailFieldsLabel;
+	WebElement emptyPasswordFieldLabel;
+	WebElement forgotYourPassword;
 	
+	
+	public WebElement getForgotYourPassword() {
+		return driver.findElement(By.cssSelector(".lost_password.form-group"));
+	}
+	public WebElement getEmptyPasswordFieldLabel() {
+		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li"));
+	}
 	public LogInPage(WebDriver driver) {
 		super();
 		this.driver = driver;
@@ -42,7 +51,7 @@ public class LogInPage {
 		this.getPasswordFiled().clear();
 		this.getPasswordFiled().sendKeys(password);
 	}
-	public WebElement getEmptyFieldsLabel() {
+	public WebElement getEmptyEmailFieldLabel() {
 		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/ol/li"));
 	}
 
@@ -59,10 +68,13 @@ public class LogInPage {
 	public String textFromInvalidPasswordLabel() {
 		return this.getInvalidPasswordLabel().getText();
 	}
-	public String textFromEmptyFieldsLabel() {
-		return this.getEmptyFieldsLabel().getText();
+	public String textFromEmptyEmailFieldLabel() {
+		return this.getEmptyEmailFieldLabel().getText();
 	}
 	public String textFromSignInButton() {
 		return this.getSignInButton().getText();
+	}
+	public String textFromEmptyPasswordFieldLabel() {
+		return this.getEmptyPasswordFieldLabel().getText();
 	}
 }

@@ -8,14 +8,19 @@ import org.openxmlformats.schemas.spreadsheetml.x2006.main.impl.VolTypesDocument
 public class MainNavigation {
 
 	WebDriver driver;
-	WebElement signInButton;
-	WebElement signOutButton;
+	WebElement signInTab;
+	WebElement signOutTab;
+	WebElement myAccountTab;
 	
-	public WebElement getSignOutButton() {
+	public WebElement getMyAccountTab() {
+		return driver.findElement(By.className("account"));
+	}
+
+	public WebElement getSignOutTab() {
 		return driver.findElement(By.className("logout"));
 	}
 
-	public WebElement getSignInButton() {
+	public WebElement getSignInTab() {
 		return driver.findElement(By.className("login"));
 	}
 
@@ -24,11 +29,15 @@ public class MainNavigation {
 		this.driver = driver;
 	}
 	
+	
 	public void clickOnSignIn () {
-		this.getSignInButton().click();
+		this.getSignInTab().click();
 	}
 	public void clickOnSignOut () {
-		this.getSignOutButton().click();
+		this.getSignOutTab().click();
+	}
+	public void clicOnMyAccountTab() {
+		this.getMyAccountTab().click();
 	}
 
 }
