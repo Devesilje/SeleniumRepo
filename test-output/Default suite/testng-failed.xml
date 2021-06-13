@@ -3,16 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.MyAddresses">
+      <class name="tests.Wishlist">
         <methods>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
+          <include name="deleteWishlist"/>
           <include name="beforeTests"/>
-          <include name="updateAddressInvalidInputSpecialCharacters"/>
           <include name="afterTests"/>
-          <include name="updateAddressInvalidInputSpace"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
         </methods>
-      </class> <!-- tests.MyAddresses -->
+      </class> <!-- tests.Wishlist -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

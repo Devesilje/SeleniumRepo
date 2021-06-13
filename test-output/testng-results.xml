@@ -1,157 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="2" failed="2" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-06-11T22:08:05 CEST" name="Default suite" finished-at="2021-06-11T22:08:59 CEST" duration-ms="54608">
+  <suite started-at="2021-06-13T19:38:44 CEST" name="Default suite" finished-at="2021-06-13T19:39:37 CEST" duration-ms="52635">
     <groups>
     </groups>
-    <test started-at="2021-06-11T22:08:05 CEST" name="Default test" finished-at="2021-06-11T22:08:59 CEST" duration-ms="54608">
-      <class name="tests.MyAddresses">
-        <test-method is-config="true" signature="beforeTests()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:05 CEST" name="beforeTests" finished-at="2021-06-11T22:08:08 CEST" duration-ms="3552" status="PASS">
+    <test started-at="2021-06-13T19:38:44 CEST" name="Default test" finished-at="2021-06-13T19:39:37 CEST" duration-ms="52635">
+      <class name="tests.Wishlist">
+        <test-method is-config="true" signature="beforeTests()[pri:0, instance:tests.Wishlist@2667f029]" started-at="2021-06-13T19:38:44 CEST" name="beforeTests" finished-at="2021-06-13T19:38:49 CEST" duration-ms="4333" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTests -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:08 CEST" name="beforeTest" finished-at="2021-06-11T22:08:19 CEST" duration-ms="10988" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.Wishlist@2667f029]" started-at="2021-06-13T19:38:49 CEST" name="beforeTest" finished-at="2021-06-13T19:38:59 CEST" duration-ms="10579" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="updateAddressValidInput()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:19 CEST" name="updateAddressValidInput" finished-at="2021-06-11T22:08:24 CEST" duration-ms="4313" status="PASS">
+        <test-method signature="deleteWishlist()[pri:1, instance:tests.Wishlist@2667f029]" started-at="2021-06-13T19:38:59 CEST" name="deleteWishlist" finished-at="2021-06-13T19:39:35 CEST" duration-ms="35500" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateAddressValidInput -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:24 CEST" name="afterTest" finished-at="2021-06-11T22:08:25 CEST" duration-ms="1503" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:25 CEST" name="beforeTest" finished-at="2021-06-11T22:08:30 CEST" duration-ms="4630" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method signature="updateAddressInvalidInputSpecialCharacters()[pri:1, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:30 CEST" name="updateAddressInvalidInputSpecialCharacters" finished-at="2021-06-11T22:08:34 CEST" duration-ms="4391" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [MAIN STREET] but found [++++++]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [MAIN STREET] but found [++++++]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at tests.MyAddresses.updateAddressInvalidInputSpecialCharacters(MyAddresses.java:42)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateAddressInvalidInputSpecialCharacters -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:34 CEST" name="afterTest" finished-at="2021-06-11T22:08:36 CEST" duration-ms="1435" status="PASS">
+        </test-method> <!-- deleteWishlist -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.Wishlist@2667f029]" started-at="2021-06-13T19:39:35 CEST" name="afterTest" finished-at="2021-06-13T19:39:37 CEST" duration-ms="2023" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:36 CEST" name="beforeTest" finished-at="2021-06-11T22:08:41 CEST" duration-ms="5602" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method signature="updateAddressInvalidInputSpace()[pri:2, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:41 CEST" name="updateAddressInvalidInputSpace" finished-at="2021-06-11T22:08:45 CEST" duration-ms="3849" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [MAIN STREET] but found []]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [MAIN STREET] but found []
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at tests.MyAddresses.updateAddressInvalidInputSpace(MyAddresses.java:53)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateAddressInvalidInputSpace -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:45 CEST" name="afterTest" finished-at="2021-06-11T22:08:47 CEST" duration-ms="1598" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:47 CEST" name="beforeTest" finished-at="2021-06-11T22:08:52 CEST" duration-ms="5150" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method signature="updateAddressEmptyField()[pri:3, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:52 CEST" name="updateAddressEmptyField" finished-at="2021-06-11T22:08:55 CEST" duration-ms="3384" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateAddressEmptyField -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:55 CEST" name="afterTest" finished-at="2021-06-11T22:08:59 CEST" duration-ms="3854" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterTests()[pri:0, instance:tests.MyAddresses@a9cd3b1]" started-at="2021-06-11T22:08:59 CEST" name="afterTests" finished-at="2021-06-11T22:08:59 CEST" duration-ms="298" status="PASS">
+        <test-method is-config="true" signature="afterTests()[pri:0, instance:tests.Wishlist@2667f029]" started-at="2021-06-13T19:39:37 CEST" name="afterTests" finished-at="2021-06-13T19:39:37 CEST" duration-ms="121" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTests -->
-      </class> <!-- tests.MyAddresses -->
+      </class> <!-- tests.Wishlist -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

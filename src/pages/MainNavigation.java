@@ -11,7 +11,12 @@ public class MainNavigation {
 	WebElement signInTab;
 	WebElement signOutTab;
 	WebElement myAccountTab;
+	WebElement womenTab;
 	
+	public WebElement getWomenTab() {
+		return driver.findElement(By.className("sf-with-ul"));
+	}
+
 	public WebElement getMyAccountTab() {
 		return driver.findElement(By.className("account"));
 	}
@@ -38,6 +43,9 @@ public class MainNavigation {
 	}
 	public void clicOnMyAccountTab() {
 		this.getMyAccountTab().click();
+	}
+	public void clickOnWomenTab() {
+		this.getWomenTab().click();
 	}
 
 }

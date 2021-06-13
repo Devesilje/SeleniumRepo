@@ -9,6 +9,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import pages.MyAddressesPage;
+import pages.MyPersonalInfoPage;
+import pages.MyWishlistPage;
+import pages.WomenPage;
 import pages.YourAddressesPage;
 import pages.LogInPage;
 import pages.MainNavigation;
@@ -22,6 +25,9 @@ public class BaseTests {
 	MyAccountPage myAccountPage;
 	MyAddressesPage myAddressesPage;
 	YourAddressesPage yourAddressesPage;
+	MyPersonalInfoPage myPersonalInfoPage;
+	MyWishlistPage myWishlistPage;
+	WomenPage womenPage;
 	ExcelReader excelReader;
 	String homeUrl;
 	
@@ -36,6 +42,9 @@ public class BaseTests {
 		myAccountPage = new MyAccountPage(driver);
 		myAddressesPage = new MyAddressesPage(driver);
 		yourAddressesPage = new YourAddressesPage(driver);
+		myPersonalInfoPage = new MyPersonalInfoPage(driver);
+		myWishlistPage = new MyWishlistPage(driver);
+		womenPage = new WomenPage(driver);
 		excelReader = new ExcelReader("data/TestPlan.xlsx");
 		homeUrl = "http://automationpractice.com/index.php";
 	}
