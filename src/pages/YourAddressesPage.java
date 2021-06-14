@@ -10,6 +10,8 @@ public class YourAddressesPage {
 	WebElement futureReferenceAddressField;
 	WebElement saveButton;
 	WebElement emptyReferenceAddressFieldLabel;
+	WebElement firstNameField;
+	WebElement lastNameField;
 	WebElement addressField;
 	WebElement cityField;
 	WebElement stateDropdownMenu;
@@ -21,13 +23,26 @@ public class YourAddressesPage {
 	WebElement emptyAddressFieldLabel;
 	WebElement errorMessage;
 	WebElement navigationElement;
+	WebElement invalidAddAddressDataLabel;
+	WebElement emptyFiledsLabel;
 	
-
+	public WebElement getEmptyFiledsLabel() {
+		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div"));
+	}
+	public WebElement getFirstNameField() {
+		return driver.findElement(By.id("firstname"));
+	}
+	public WebElement getLastNameField() {
+		return driver.findElement(By.id("lastname"));
+	}
+	public WebElement getInvalidAddAddressDataLabel() {
+		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div"));
+	}
 	public WebElement getNavigationElement() {
 		return driver.findElement(By.className("navigation_page"));
 	}
 	public WebElement getErrorMessage() {
-		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div/p[1]"));
+		return driver.findElement(By.cssSelector(".alert.alert-danger"));
 	}
 	public WebElement getEmptyAddressFieldLabel() {
 		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div/ol/li"));
@@ -69,7 +84,7 @@ public class YourAddressesPage {
 	}
 	
 	public WebElement getReferenceAddressEmptyFiledLabel() {
-		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div/ol/li"));
+		return driver.findElement(By.cssSelector(".alert.alert-danger"));
 	}
 	
 	public WebElement getSaveButton() {
@@ -81,6 +96,14 @@ public class YourAddressesPage {
 	public void insertFutureReferenceAddress (String address) {
 		this.getFutureReferenceAddressField().clear();
 		this.getFutureReferenceAddressField().sendKeys(address);
+	}
+	public void insertFirstname(String name) {
+		this.getFirstNameField().clear();
+		this.getFirstNameField().sendKeys(name);
+	}
+	public void insertLastname(String name) {
+		this.getLastNameField().clear();
+		this.getLastNameField().sendKeys(name);
 	}
 	public void insertAddress(String address) {
 		this.getAddressField().clear();
@@ -132,5 +155,20 @@ public class YourAddressesPage {
 	public String textFromEmptyReferenceAddressField() {
 		return getReferenceAddressEmptyFiledLabel().getText();
 	}
-	
+	public int numberOfElements () {
+		return driver.findElements(By.xpath("//*[@id=\"center_column\"]/div/div/ol/li")).size();
+	}
+	public int numberOfErrorElements() {
+		return driver.findElements(By.xpath("//*[@id=\\\"center_column\\\"]/div/div")).size();
+	}
+	public String textFromInvalidAddAddressData() {
+		 return getInvalidAddAddressDataLabel().getText();
+	}
+	public String textFromEmptyFiledsLabel() {
+		return getEmptyFiledsLabel().getText();
+	}
+	public int numberOfErrorAdd() {
+		return driver.findElements(By.cssSelector(".alert.alert-danger")).size();
+		
+	}
 }

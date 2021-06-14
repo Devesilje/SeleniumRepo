@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -57,5 +58,16 @@ public class MyAddressesPage {
 	}
 	public void clickOnSecondAddressDeleteButton() {
 		getSecondAddressDeleteButton().click();
+	}
+	public WebElement getEnterButton() {
+		return driver.findElement(By.xpath("/html/body"));
+
+	}
+	public void EnterClick() {
+		this.getEnterButton().sendKeys(Keys.ENTER);
+		
+	}
+	public int numberOfElementsDeleting () {
+		return driver.findElements(By.xpath("//*[@id=\"center_column\"]/div[1]/div/div[2]/ul")).size();
 	}
 }

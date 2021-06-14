@@ -77,4 +77,10 @@ public class LogInPage {
 	public String textFromEmptyPasswordFieldLabel() {
 		return this.getEmptyPasswordFieldLabel().getText();
 	}
+	public void clickOnForgotYourPassword() {
+		this.getForgotYourPassword().click();
+	}
+	public int numberOfElements () {
+		return driver.findElements(By.cssSelector(".alert.alert-danger")).size();
+	}
 }

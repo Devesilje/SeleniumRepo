@@ -1,10 +1,14 @@
 package tests;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNull;
+import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,10 +26,10 @@ public class Wishlist extends BaseTests{
 		logInPage.insertPassword(password);
 		logInPage.clickOnSignIn();
 		
-	}/*
+	}
 	
 	
-	@Test(priority = 0)
+	/*@Test(priority = 0)
 	public void addWishlist () {
 		String name = excelReader.getStringData("MyWishlist", 10, 3);
 		String textForAssertion = excelReader.getStringData("MyWishlist", 14, 3);
@@ -37,19 +41,21 @@ public class Wishlist extends BaseTests{
 		
 	}
 	
-	@Test(priority = 0)
+	@Test(priority = 1)
 	public void addItemToWishlist () throws InterruptedException{
-		String textForAssertion = excelReader.getStringData("MyWishlist", 31, 3);
+		String textForAssertion = excelReader.getStringData("MyWishlist", 32, 3);
 		mainNavigation.clickOnWomenTab();
+		wd.until(ExpectedConditions.elementToBeClickable(womenPage.getFirstDress()));
 		womenPage.hoverFirstDress();
+		wd.until(ExpectedConditions.elementToBeClickable(womenPage.getFirstDress()));
 		womenPage.clickOnFirstDressWishList();
 		womenPage.clickOnXPopUp();
 		mainNavigation.clicOnMyAccountTab();
 		myAccountPage.clickOnMyWishlistButton();
 		String actualText = myWishlistPage.textFromNumberItemsFirstWishlist();
 		assertEquals(actualText, textForAssertion);
-	}*/
-	@Test (priority = 1)
+	}
+	@Test (priority = 2)
 	public void deleteWishlist () throws InterruptedException{
 		myAccountPage.clickOnMyWishlistButton();
 		myWishlistPage.clickOnDeleteIcon();
@@ -67,6 +73,43 @@ public class Wishlist extends BaseTests{
 			actual = false;
 		}
 		assertEquals(actual, expected);}
+	//WebElement element = driver.findElement(locator);
+		//assertNull(myWishlistPage.getFirstWishlist());
+		
+       
+	@Test(priority = 3)
+	public void addMultipleWishlists () {
+		addWishlist();
+		String name = excelReader.getStringData("MyWishlist", 79, 3);
+		String textForAssertion = excelReader.getStringData("MyWishlist", 14, 3);
+		String textForAssertion1 = excelReader.getStringData("MyWishlist", 82, 3);
+		myWishlistPage.insertWishlistName(name);
+		myWishlistPage.clickOnSaveWishlist();
+		boolean result = myWishlistPage.textFromFirstWishlist().equals(textForAssertion) &&
+                myWishlistPage.textFromSecondWishlist().equals(textForAssertion1);
+		assertTrue(result);
+	}
+*/
+	@Test(priority = 1)
+	public void addItemToSecondWishlist () throws InterruptedException{
+		String textForAssertion = excelReader.getStringData("MyWishlist", 104, 3);
+		mainNavigation.clickOnWomenTab();
+        Actions actions = new Actions(driver);
+        actions.moveToElement(womenPage.getFirstDress());
+        Actions builder = new Actions(driver);
+        builder.moveToElement(womenPage.getFirstDress()).perform();
+        Thread.sleep(1000);
+        builder.moveToElement(womenPage.getFirstDressWishlist()).click().perform();
+		
+		/*womenPage.hoverFirstDress();
+		//wd.until(ExpectedConditions.elementToBeClickable(womenPage.getFirstDress()));
+		womenPage.clickOnFirstDress();
+		firstDressPrinted.clickAddToWishlist();*/
+		mainNavigation.clicOnMyAccountTab();
+		myAccountPage.clickOnMyWishlistButton();
+		String actualText = myWishlistPage.textFromNumberIntemsSecondWishlist();
+		assertEquals(actualText, textForAssertion);
+	}
 	@AfterMethod
 	public void afterTest() {
 		driver.manage().deleteAllCookies();

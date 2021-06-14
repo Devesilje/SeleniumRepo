@@ -21,7 +21,7 @@ public class WomenPage {
 	}
 
 	public WebElement getFirstDressWishlist() {
-		return driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[3]/div/div[3]/div[1]/a"));
+		return driver.findElement(By.cssSelector(".addToWishlist.wishlistProd_3"));
 	}
 
 	public WomenPage(WebDriver driver) {
@@ -38,9 +38,10 @@ public class WomenPage {
 		Actions builder = new Actions(driver);
 		 WebElement element = driver.findElement(By.cssSelector(".replace-2x.img-responsive"));
 		 builder.moveToElement(element).build().perform();
-		//Actions builder = new Actions(driver);
-		//builder.moveToElement(getFirstDress()).perform();
 		
+	}
+	public void  clickOnFirstDress() {
+		this.getFirstDress().click();
 	}
 
 }

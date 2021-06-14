@@ -23,5 +23,13 @@ public class ForgotYourPasswordPage {
 	public WebElement getForgotYourPasswordLabel() {
 		return driver.findElement(By.className("page-subheading"));
 	}
+	public ForgotYourPasswordPage(WebDriver driver) {
+		super();
+		this.driver = driver;
+	}
+
+	public String textFromForgotYourPasswordLabel() {
+		return this.getForgotYourPasswordLabel().getText();
+	}
 
 }

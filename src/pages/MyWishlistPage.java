@@ -13,8 +13,21 @@ public class MyWishlistPage {
 	WebElement firstWishlist;
 	WebElement deleteIcon;
 	WebElement numberOfItemsFirstWishlist;
+	WebElement secondWishlist;
+	WebElement numberOfItemsSecondWishlist;
 	
-	
+	public WebElement getNumberOfItemsSecondWishlist() {
+		return driver.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/div/div[1]/table/tbody/tr[2]/td[2]"));
+	}
+
+
+
+	public WebElement getSecondWishlist() {
+		return driver.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/div/div[1]/table/tbody/tr[2]/td[1]"));
+	}
+
+
+
 	public WebElement getNumberOfItemsFirstWishlist() {
 		return driver.findElement(By.cssSelector(".bold.align_center"));
 	}
@@ -28,7 +41,7 @@ public class MyWishlistPage {
 
 
 	public WebElement getFirstWishlist() {
-		return driver.findElement(By.cssSelector(".table.table-bordered"));
+		return driver.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/div/div[1]/table/tbody/tr[1]/td[1]/a"));
 	}
 
 
@@ -73,5 +86,11 @@ public class MyWishlistPage {
 	public void EnterClick() {
 		this.getEnterButton().sendKeys(Keys.ENTER);
 		
+	}
+	public String textFromSecondWishlist() {
+		return this.getSecondWishlist().getText();
+	}
+	public String textFromNumberIntemsSecondWishlist() {
+		return this.getNumberOfItemsSecondWishlist().getText();
 	}
 }

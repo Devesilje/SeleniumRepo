@@ -112,7 +112,7 @@ public class EditPersonalInfo extends BaseTests{
 		myPersonalInfoPage.insertPassword(password);
 		myPersonalInfoPage.clickOnSaveButton();
 		
-		boolean expected = true;
+		boolean expected = false;
 		boolean actual;
 		int present = this.driver.findElements(By.xpath("//*[@id=\"center_column\"]/div/div/p")).size();
 		if (present>0) {
