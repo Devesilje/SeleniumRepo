@@ -12,7 +12,13 @@ public class MainNavigation {
 	WebElement signOutTab;
 	WebElement myAccountTab;
 	WebElement womenTab;
+    WebElement cart;
 	
+	
+	public WebElement getCart() {
+		return  driver.findElement(By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a"));
+	}
+
 	public WebElement getWomenTab() {
 		return driver.findElement(By.className("sf-with-ul"));
 	}
@@ -46,6 +52,12 @@ public class MainNavigation {
 	}
 	public void clickOnWomenTab() {
 		this.getWomenTab().click();
+	}
+	public String textFromCart() {
+		return this.getCart().getText();
+	}
+	public void clickOnCart() {
+		this.getCart().click();
 	}
 
 }

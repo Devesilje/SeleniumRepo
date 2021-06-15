@@ -9,11 +9,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
+
+
 import pages.MyAddressesPage;
 import pages.MyPersonalInfoPage;
 import pages.MyWishlistPage;
 import pages.WomenPage;
 import pages.YourAddressesPage;
+import pages.CartPage;
 import pages.FirstDressPrinted;
 import pages.ForgotYourPasswordPage;
 import pages.LogInPage;
@@ -36,6 +40,8 @@ public class BaseTests {
 	ExcelReader excelReader;
 	String homeUrl;
 	WebDriverWait wd;
+	CartPage cartpage;
+	
 	
 	@BeforeClass 
 	public void beforeTests() throws IOException {
@@ -54,8 +60,10 @@ public class BaseTests {
 		womenPage = new WomenPage(driver);
 		forgotYourPasswordPage = new ForgotYourPasswordPage(driver);
 		firstDressPrinted = new FirstDressPrinted(driver);
+		cartpage = new CartPage(driver);
 		excelReader = new ExcelReader("data/TestPlan.xlsx");
 		homeUrl = "http://automationpractice.com/index.php";
+		
 	}
 	@AfterClass
 	public void afterTests () {

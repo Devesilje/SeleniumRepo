@@ -124,5 +124,11 @@ public class MyPersonalInfoPage {
 	public String textInvalidFirstLastname() {
 		return this.getInvalidFirstLastname().getText();
 	}
+	public int numberOfElementsErrorMessage () {
+		return driver.findElements(By.xpath("//*[@id=\"center_column\"]/div/div/ol/li")).size();
+	}
+	public String textErrorMessage() {
+		return this.getErrorMessage().getText();
+	}
 
 }

@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 
-public class EditPersonalInfo extends BaseTests{
+public class EditPersonalInfoTests extends BaseTests{
 	
 	@BeforeMethod
 	public void beforeTest() {
@@ -25,7 +25,7 @@ public class EditPersonalInfo extends BaseTests{
 		logInPage.insertEmail(email);
 		logInPage.insertPassword(password);
 		logInPage.clickOnSignIn();
-	}/*
+	}
 	@Test (priority = 0)
 	public void updatePersonalInfoValidInput() {
 		String firstname = excelReader.getStringData("UpdatePersonalInfo", 10, 3);
@@ -34,10 +34,7 @@ public class EditPersonalInfo extends BaseTests{
 		String month = excelReader.getStringData("UpdatePersonalInfo", 14, 3);
 		String year = excelReader.getStringData("UpdatePersonalInfo", 15, 3);
 		String password = excelReader.getStringData("UpdatePersonalInfo", 16, 3);
-	
 		String textForAssertion = excelReader.getStringData("UpdatePersonalInfo", 20, 3);
-		
-		
 		myAccountPage.clickOnMyPersonalInfoButton();
 	    myPersonalInfoPage.insertFirstName(firstname);
 		myPersonalInfoPage.insertLastName(lastname);
@@ -52,7 +49,6 @@ public class EditPersonalInfo extends BaseTests{
 		drpYear.selectByValue(year);
 		myPersonalInfoPage.insertPassword(password);
 		myPersonalInfoPage.clickOnSaveButton();
-		
 		String actualText = myPersonalInfoPage.textForSuccessUpdate();
 	    assertEquals(actualText, textForAssertion);
 		
@@ -65,7 +61,6 @@ public class EditPersonalInfo extends BaseTests{
 		String month = excelReader.getStringData("UpdatePersonalInfo", 35, 3);
 		String year = excelReader.getStringData("UpdatePersonalInfo", 36, 3);
 		String password = excelReader.getStringData("UpdatePersonalInfo", 37, 3);
-	
 		String textForAssertion = excelReader.getStringData("UpdatePersonalInfo", 41, 3);
 		
 		myAccountPage.clickOnMyPersonalInfoButton();
@@ -82,7 +77,6 @@ public class EditPersonalInfo extends BaseTests{
 		drpYear.selectByValue(year);
 		myPersonalInfoPage.insertPassword(password);
 		myPersonalInfoPage.clickOnSaveButton();
-		
 		String actualText = myPersonalInfoPage.textInvalidPasswordMessage();
 	    assertEquals(actualText, textForAssertion);
 		
@@ -96,7 +90,7 @@ public class EditPersonalInfo extends BaseTests{
 		String month = excelReader.getStringData("UpdatePersonalInfo", 35, 4);
 		String year = excelReader.getStringData("UpdatePersonalInfo", 36, 4);
 		String password = excelReader.getStringData("UpdatePersonalInfo", 37, 4);
-		
+		String textForAssertion = excelReader.getStringData("UpdatePersonalInfo", 41, 4);
 		myAccountPage.clickOnMyPersonalInfoButton();
 	    myPersonalInfoPage.insertFirstName(firstname);
 		myPersonalInfoPage.insertLastName(lastname);
@@ -111,16 +105,16 @@ public class EditPersonalInfo extends BaseTests{
 		drpYear.selectByValue(year);
 		myPersonalInfoPage.insertPassword(password);
 		myPersonalInfoPage.clickOnSaveButton();
-		
-		boolean expected = false;
+		int present = myPersonalInfoPage.numberOfElementsErrorMessage();
+		boolean expected = true;
 		boolean actual;
-		int present = this.driver.findElements(By.xpath("//*[@id=\"center_column\"]/div/div/p")).size();
-		if (present>0) {
-			actual = true;
+		if (present > 0) {
+			String actualText = myPersonalInfoPage.textErrorMessage();
+			assertEquals(actualText, textForAssertion);
 		} else {
 			actual = false;
+			assertEquals(actual, expected);
 		}
-		assertEquals(actual, expected);
 		
 	}
 	@Test (priority = 3)
@@ -160,11 +154,10 @@ public class EditPersonalInfo extends BaseTests{
 		String month = excelReader.getStringData("UpdatePersonalInfo", 35, 6);
 		String year = excelReader.getStringData("UpdatePersonalInfo", 36, 6);
 		String password = excelReader.getStringData("UpdatePersonalInfo", 37, 6);
-		
+		String textForAssertion = excelReader.getStringData("UpdatePersonalInfo", 41, 6);
 		myAccountPage.clickOnMyPersonalInfoButton();
 	    myPersonalInfoPage.insertFirstName(firstname);
 		myPersonalInfoPage.insertLastName(lastname);
-		
 		myPersonalInfoPage.clickOnDayButton();
 		Select drpDay = new Select(myPersonalInfoPage.getDayDropDownMenu());
 		drpDay.selectByValue(day);
@@ -176,19 +169,17 @@ public class EditPersonalInfo extends BaseTests{
 		drpYear.selectByValue(year);
 		myPersonalInfoPage.insertPassword(password);
 		myPersonalInfoPage.clickOnSaveButton();
-		
+		int present = myPersonalInfoPage.numberOfElementsErrorMessage();
 		boolean expected = true;
 		boolean actual;
-		int present = this.driver.findElements(By.xpath("//*[@id=\"center_column\"]/div/div/p")).size();
-		if (present>0) {
-			actual = true;
+		if (present > 0) {
+			String actualText = myPersonalInfoPage.textErrorMessage();
+			assertEquals(actualText, textForAssertion);
 		} else {
 			actual = false;
+			assertEquals(actual, expected);
 		}
-		assertEquals(actual, expected);
-		
-	
-	}*/
+	}
 	@Test (priority = 3)
 	public void updatePersonalInfoEmptyFirstname() {
 		

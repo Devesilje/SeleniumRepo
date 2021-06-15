@@ -5,7 +5,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class AddDeleteAddressTests extends BaseTests {
+public class AddAndDeleteAddressTests extends BaseTests {
 
 	@BeforeMethod
 	public void beforeTest() {
