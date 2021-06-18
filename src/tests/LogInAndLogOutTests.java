@@ -14,12 +14,12 @@ public class LogInAndLogOutTests extends BaseTests {
 		driver.manage().window().maximize();
 		mainNavigation.clickOnSignIn();
 	}
-
+	
 	@Test(priority = 0)
 	public void logInCorrectEmailPassword() {
-		String email = excelReader.getStringData("LogIn", 9, 3);
-		String password = excelReader.getStringData("LogIn", 10, 3);
-		String textForAssertion = excelReader.getStringData("LogIn", 14, 3);
+		String email = excelReader.getStringData("LogIn", 7, 3);
+		String password = excelReader.getStringData("LogIn", 8, 3);
+		String textForAssertion = excelReader.getStringData("LogIn", 12, 3);
 		logInPage.insertEmail(email);
 		logInPage.insertPassword(password);
 		logInPage.clickOnSignIn();
@@ -29,9 +29,9 @@ public class LogInAndLogOutTests extends BaseTests {
 
 	@Test(priority = 1)
 	public void logInIncorrectEmail() {
-		String email = excelReader.getStringData("LogIn", 25, 3);
-		String password = excelReader.getStringData("LogIn", 26, 3);
-		String textForAssertion = excelReader.getStringData("LogIn", 30, 3);
+		String email = excelReader.getStringData("LogIn", 20, 3);
+		String password = excelReader.getStringData("LogIn", 21, 3);
+		String textForAssertion = excelReader.getStringData("LogIn", 25, 3);
 		logInPage.insertEmail(email);
 		logInPage.insertPassword(password);
 		logInPage.clickOnSignIn();
@@ -41,9 +41,9 @@ public class LogInAndLogOutTests extends BaseTests {
 
 	@Test(priority = 2)
 	public void logInIncorrectPassword() {
-		String email = excelReader.getStringData("LogIn", 41, 3);
-		String password = excelReader.getStringData("LogIn", 42, 3);
-		String textForAssertion = excelReader.getStringData("LogIn", 46, 3);
+		String email = excelReader.getStringData("LogIn", 20, 4);
+		String password = excelReader.getStringData("LogIn", 21, 4);
+		String textForAssertion = excelReader.getStringData("LogIn", 25, 4);
 		logInPage.insertEmail(email);
 		logInPage.insertPassword(password);
 		logInPage.clickOnSignIn();
@@ -53,9 +53,9 @@ public class LogInAndLogOutTests extends BaseTests {
 
 	@Test(priority = 3)
 	public void logInIncorrectPasswordSpace() {
-		String email = excelReader.getStringData("LogIn", 41, 4);
-		String password = excelReader.getStringData("LogIn", 42, 4);
-		String textForAssertion = excelReader.getStringData("LogIn", 46, 4);
+		String email = excelReader.getStringData("LogIn", 20, 5);
+		String password = excelReader.getStringData("LogIn", 21, 5);
+		String textForAssertion = excelReader.getStringData("LogIn", 25, 5);
 		logInPage.insertEmail(email);
 		logInPage.insertPassword(password);
 		logInPage.clickOnSignIn();
@@ -73,9 +73,8 @@ public class LogInAndLogOutTests extends BaseTests {
 
 	@Test(priority = 4)
 	public void logInEmptyEmailField() {
-		String password = excelReader.getStringData("LogIn", 61, 3);
-		String textForAssertion = excelReader.getStringData("LogIn", 65, 3);
-		logInPage.insertEmail("");
+		String password = excelReader.getStringData("LogIn", 36, 3);
+		String textForAssertion = excelReader.getStringData("LogIn", 40, 3);
 		logInPage.insertPassword(password);
 		logInPage.clickOnSignIn();
 		String actualText = logInPage.textFromEmptyEmailFieldLabel();
@@ -84,8 +83,8 @@ public class LogInAndLogOutTests extends BaseTests {
 
 	@Test(priority = 5)
 	public void logInEmptyPasswordField() {
-		String email = excelReader.getStringData("LogIn", 60, 4);
-		String textForAssertion = excelReader.getStringData("LogIn", 65, 4);
+		String email = excelReader.getStringData("LogIn", 35, 4);
+		String textForAssertion = excelReader.getStringData("LogIn", 40, 4);
 		logInPage.insertEmail(email);
 		logInPage.insertPassword("");
 		logInPage.clickOnSignIn();
@@ -96,7 +95,7 @@ public class LogInAndLogOutTests extends BaseTests {
 
 	@Test(priority = 6)
 	public void logOutOnSignOutButton() {
-		String textForAssertion = excelReader.getStringData("LogOut", 15, 3);
+		String textForAssertion = excelReader.getStringData("LogOut", 10, 3);
 		logInCorrectEmailPassword();
 		mainNavigation.clickOnSignOut();
 		String actualText = logInPage.textFromSignInButton();
@@ -105,7 +104,7 @@ public class LogInAndLogOutTests extends BaseTests {
 
 	@Test(priority = 7)
 	public void logOutOnBackButton() {
-		String textForAssertion = excelReader.getStringData("LogOut", 31, 3);
+		String textForAssertion = excelReader.getStringData("LogOut", 21, 3);
 		logInCorrectEmailPassword();
 		driver.navigate().back();
 		String actualText = logInPage.textFromSignInButton();
@@ -113,11 +112,12 @@ public class LogInAndLogOutTests extends BaseTests {
 	}
 
 	@Test(priority = 8)
-	public void forgotYourPassword() {
-		String textForAssertion = excelReader.getStringData("LogIn", 78, 3);
+	public void forgotYourPassword() throws InterruptedException{
+		String textForAssertion = excelReader.getStringData("LogIn", 51, 3);
 		logInPage.clickOnForgotYourPassword();
+		Thread.sleep(2000);
 		String actualText = forgotYourPasswordPage.textFromForgotYourPasswordLabel();
-		AssertJUnit.assertEquals(actualText, textForAssertion);
+		AssertJUnit.assertEquals(textForAssertion, actualText);
 	}
 
 	@AfterMethod

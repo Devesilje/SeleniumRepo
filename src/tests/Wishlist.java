@@ -20,8 +20,8 @@ public class Wishlist extends BaseTests {
 		driver.navigate().to(homeUrl);
 		driver.manage().window().maximize();
 		mainNavigation.clickOnSignIn();
-		String email = excelReader.getStringData("LogIn", 9, 3);
-		String password = excelReader.getStringData("LogIn", 10, 3);
+		String email = excelReader.getStringData("LogIn", 7, 3);
+		String password = excelReader.getStringData("LogIn", 8, 3);
 		logInPage.insertEmail(email);
 		logInPage.insertPassword(password);
 		logInPage.clickOnSignIn();
@@ -30,8 +30,8 @@ public class Wishlist extends BaseTests {
 
 	@Test(priority = 0)
 	public void addWishlist() {
-		String name = excelReader.getStringData("MyWishlist", 10, 3);
-		String textForAssertion = excelReader.getStringData("MyWishlist", 14, 3);
+		String name = excelReader.getStringData("MyWishlist", 8, 3);
+		String textForAssertion = excelReader.getStringData("MyWishlist", 12, 3);
 		myAccountPage.clickOnMyWishlistButton();
 		myWishlistPage.insertWishlistName(name);
 		myWishlistPage.clickOnSaveWishlist();
@@ -41,7 +41,7 @@ public class Wishlist extends BaseTests {
 
 	@Test(priority = 1)
 	public void addItemToWishlist() throws InterruptedException {
-		String textForAssertion = excelReader.getStringData("MyWishlist", 32, 3);
+		String textForAssertion = excelReader.getStringData("MyWishlist", 26, 3);
 		mainNavigation.clickOnWomenTab();
 		wd.until(ExpectedConditions.elementToBeClickable(womenPage.getFirstDress()));
 		womenPage.hoverFirstDress();
@@ -54,7 +54,6 @@ public class Wishlist extends BaseTests {
 		assertEquals(actualText, textForAssertion);
 	}
 	
-
 	@Test(priority = 2)
 	public void deleteWishlist() throws InterruptedException {
 		myAccountPage.clickOnMyWishlistButton();
@@ -76,9 +75,9 @@ public class Wishlist extends BaseTests {
 	@Test(priority = 3)
 	public void addMultipleWishlists() {
 		addWishlist();
-		String name = excelReader.getStringData("MyWishlist", 74, 3);
-		String textForAssertion = excelReader.getStringData("MyWishlist", 14, 3);
-		String textForAssertion1 = excelReader.getStringData("MyWishlist", 77, 3);
+		String name = excelReader.getStringData("MyWishlist", 63, 3);
+		String textForAssertion = excelReader.getStringData("MyWishlist", 67, 3);
+		String textForAssertion1 = excelReader.getStringData("MyWishlist", 66, 3);
 		myWishlistPage.insertWishlistName(name);
 		myWishlistPage.clickOnSaveWishlist();
 		boolean result = myWishlistPage.textFromFirstWishlist().equals(textForAssertion)
@@ -88,7 +87,7 @@ public class Wishlist extends BaseTests {
 
 	@Test(priority = 4)
 	public void addItemToSecondWishlist() throws InterruptedException {
-		String textForAssertion = excelReader.getStringData("MyWishlist", 100, 3);
+		String textForAssertion = excelReader.getStringData("MyWishlist", 87, 3);
 		mainNavigation.clickOnWomenTab();
 		Thread.sleep(1000);
 		womenPage.clickOnFirstDress();

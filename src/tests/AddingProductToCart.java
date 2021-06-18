@@ -18,8 +18,8 @@ public class AddingProductToCart extends BaseTests{
 		driver.navigate().to(homeUrl);
 		driver.manage().window().maximize();
 		mainNavigation.clickOnSignIn();
-		String email = excelReader.getStringData("LogIn", 9, 3);
-		String password = excelReader.getStringData("LogIn", 10, 3);
+		String email = excelReader.getStringData("LogIn", 7, 3);
+		String password = excelReader.getStringData("LogIn", 8, 3);
 		logInPage.insertEmail(email);
 		logInPage.insertPassword(password);
 		logInPage.clickOnSignIn();
@@ -27,7 +27,7 @@ public class AddingProductToCart extends BaseTests{
 	}
 	@Test (priority = 0)
 	public void addOneItem() throws InterruptedException {
-		String textForAssertion = excelReader.getStringData("AddingItemsToCart", 14, 3);
+		String textForAssertion = excelReader.getStringData("AddingItemsToCart", 12, 3);
 		mainNavigation.clickOnWomenTab();
 		womenPage.clickOnFirstDress();
 		firstDressPrinted.clickOnAddToCartButton();
@@ -37,7 +37,7 @@ public class AddingProductToCart extends BaseTests{
 	}
 	@Test (priority = 1)
 	public void removeItemFromCart() throws InterruptedException{
-		String textForAssertion = excelReader.getStringData("AddingItemsToCart", 48, 3);
+		String textForAssertion = excelReader.getStringData("AddingItemsToCart", 43, 3);
 		mainNavigation.clickOnWomenTab();
 		womenPage.clickOnFirstDress();
 		firstDressPrinted.clickOnAddToCartButton();
@@ -51,10 +51,10 @@ public class AddingProductToCart extends BaseTests{
 	}
 	@Test (priority = 2)
 	public void changeSizeQuantity() throws InterruptedException {
-		String quantity = excelReader.getStringData("AddingItemsToCart", 26, 3);
-		String size = excelReader.getStringData("AddingItemsToCart", 27, 3);
-		String textForAssertion = excelReader.getStringData("AddingItemsToCart", 30, 3);
-		String textForAssertion1 = excelReader.getStringData("AddingItemsToCart", 31, 3);
+		String quantity = excelReader.getStringData("AddingItemsToCart", 22, 3);
+		String size = excelReader.getStringData("AddingItemsToCart", 23, 3);
+		String textForAssertion = excelReader.getStringData("AddingItemsToCart", 26, 3);
+		String textForAssertion1 = excelReader.getStringData("AddingItemsToCart", 27, 3);
 		mainNavigation.clickOnWomenTab();
 		womenPage.clickOnFirstDress();
 		firstDressPrinted.insertQuantity(quantity);
@@ -68,7 +68,7 @@ public class AddingProductToCart extends BaseTests{
 	}
 	@Test(priority = 3)
 	public void addMultupleItemsToCart() throws InterruptedException{
-		String textForAssertion = excelReader.getStringData("AddingItemsToCart", 70, 3);
+		String textForAssertion = excelReader.getStringData("AddingItemsToCart", 60, 3);
 		mainNavigation.clickOnWomenTab();
 		womenPage.clickOnListOption();
 		womenPage.clickOnFirstItemAddToCart();

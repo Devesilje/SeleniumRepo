@@ -17,6 +17,7 @@ import pages.MyPersonalInfoPage;
 import pages.MyWishlistPage;
 import pages.WomenPage;
 import pages.YourAddressesPage;
+import pages.YourPersonalInfoCreateAccountPage;
 import pages.CartPage;
 import pages.FirstDressPrinted;
 import pages.ForgotYourPasswordPage;
@@ -37,6 +38,7 @@ public class BaseTests {
 	WomenPage womenPage;
 	FirstDressPrinted firstDressPrinted;
 	ForgotYourPasswordPage forgotYourPasswordPage;
+	YourPersonalInfoCreateAccountPage yourPersonalInfoCreateAccountPage;
 	ExcelReader excelReader;
 	String homeUrl;
 	WebDriverWait wd;
@@ -61,6 +63,7 @@ public class BaseTests {
 		forgotYourPasswordPage = new ForgotYourPasswordPage(driver);
 		firstDressPrinted = new FirstDressPrinted(driver);
 		cartpage = new CartPage(driver);
+		yourPersonalInfoCreateAccountPage = new YourPersonalInfoCreateAccountPage(driver);
 		excelReader = new ExcelReader("data/TestPlan.xlsx");
 		homeUrl = "http://automationpractice.com/index.php";
 		

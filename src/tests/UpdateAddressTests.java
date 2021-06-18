@@ -12,8 +12,8 @@ public class UpdateAddressTests extends BaseTests {
 		driver.navigate().to(homeUrl);
 		driver.manage().window().maximize();
 		mainNavigation.clickOnSignIn();
-		String email = excelReader.getStringData("LogIn", 9, 3);
-		String password = excelReader.getStringData("LogIn", 10, 3);
+		String email = excelReader.getStringData("LogIn", 7, 3);
+		String password = excelReader.getStringData("LogIn", 8, 3);
 		logInPage.insertEmail(email);
 		logInPage.insertPassword(password);
 		logInPage.clickOnSignIn();
@@ -21,10 +21,10 @@ public class UpdateAddressTests extends BaseTests {
 
 	@Test(priority = 0)
 	public void updateAddressValidInput() {
-		String address = excelReader.getStringData("UpdateAddress", 11, 3);
-		String futureReferenceAddress = excelReader.getStringData("UpdateAddress", 12, 3);
-		String textForAssertion1 = excelReader.getStringData("UpdateAddress", 16, 3);
-		String textForAssertion2 = excelReader.getStringData("UpdateAddress", 17, 3);
+		String address = excelReader.getStringData("UpdateAddress", 9, 3);
+		String futureReferenceAddress = excelReader.getStringData("UpdateAddress", 10, 3);
+		String textForAssertion1 = excelReader.getStringData("UpdateAddress", 14, 3);
+		String textForAssertion2 = excelReader.getStringData("UpdateAddress", 15, 3);
 		myAccountPage.clickOnMyAddressesButton();
 		myAddressesPage.clickOnUpdateButton();
 		yourAddressesPage.insertAddress(address);
@@ -37,10 +37,10 @@ public class UpdateAddressTests extends BaseTests {
 
 	@Test(priority = 1)
 	public void updateAddressValidInputDifferentReferenceAddress() {
-		String address = excelReader.getStringData("UpdateAddress", 11, 4);
-		String futureReferenceAddress = excelReader.getStringData("UpdateAddress", 12, 4);
-		String textForAssertion1 = excelReader.getStringData("UpdateAddress", 16, 4);
-		String textForAssertion2 = excelReader.getStringData("UpdateAddress", 17, 4);
+		String address = excelReader.getStringData("UpdateAddress", 9, 4);
+		String futureReferenceAddress = excelReader.getStringData("UpdateAddress", 10, 4);
+		String textForAssertion1 = excelReader.getStringData("UpdateAddress", 14, 4);
+		String textForAssertion2 = excelReader.getStringData("UpdateAddress", 15, 4);
 		myAccountPage.clickOnMyAddressesButton();
 		myAddressesPage.clickOnUpdateButton();
 		yourAddressesPage.insertAddress(address);
@@ -53,8 +53,8 @@ public class UpdateAddressTests extends BaseTests {
 
 	@Test(priority = 2)
 	public void updateAddressInvalidInputSpecialCharacters() {
-		String address = excelReader.getStringData("UpdateAddress", 28, 3);
-		String textForAssertion = excelReader.getStringData("UpdateAddress", 33, 3);
+		String address = excelReader.getStringData("UpdateAddress", 24, 3);
+		String textForAssertion = excelReader.getStringData("UpdateAddress", 29, 3);
 		myAccountPage.clickOnMyAddressesButton();
 		myAddressesPage.clickOnUpdateButton();
 		yourAddressesPage.insertAddress(address);
@@ -65,9 +65,9 @@ public class UpdateAddressTests extends BaseTests {
 
 	@Test(priority = 3)
 	public void updateAddressesInvalidInputSpace() {
-		String address = excelReader.getStringData("UpdateAddress", 28, 5);
-		String futureReferenceAddress = excelReader.getStringData("UpdateAddress", 29, 5);
-		String textForAssertion = excelReader.getStringData("UpdateAddress", 33, 5);
+		String address = excelReader.getStringData("UpdateAddress", 24, 5);
+		String futureReferenceAddress = excelReader.getStringData("UpdateAddress", 25, 5);
+		String textForAssertion = excelReader.getStringData("UpdateAddress", 29, 5);
 		myAccountPage.clickOnMyAddressesButton();
 		myAddressesPage.clickOnUpdateButton();
 		yourAddressesPage.insertAddress(address);
@@ -88,9 +88,9 @@ public class UpdateAddressTests extends BaseTests {
 
 	@Test(priority = 4)
 	public void updateAddressFurtherReferencesInvalidInputSpecialCharacters() {
-		String address = excelReader.getStringData("UpdateAddress", 28, 6);
-		String futureReferenceAddress = excelReader.getStringData("UpdateAddress", 29, 6);
-		String textForAssertion = excelReader.getStringData("UpdateAddress", 33, 6);
+		String address = excelReader.getStringData("UpdateAddress", 24, 6);
+		String futureReferenceAddress = excelReader.getStringData("UpdateAddress", 25, 6);
+		String textForAssertion = excelReader.getStringData("UpdateAddress", 29, 6);
 		myAccountPage.clickOnMyAddressesButton();
 		myAddressesPage.clickOnUpdateButton();
 		yourAddressesPage.insertAddress(address);
@@ -110,7 +110,7 @@ public class UpdateAddressTests extends BaseTests {
 
 	@Test(priority = 5)
 	public void updateAddressEmptyField() {
-		String textForAssertion = excelReader.getStringData("UpdateAddress", 52, 3);
+		String textForAssertion = excelReader.getStringData("UpdateAddress", 47, 3);
 		myAccountPage.clickOnMyAddressesButton();
 		myAddressesPage.clickOnUpdateButton();
 		yourAddressesPage.getAddressField().clear();
@@ -121,7 +121,7 @@ public class UpdateAddressTests extends BaseTests {
 
 	@Test(priority = 6)
 	public void updateAddressFurtherReferencesEmptyField() {
-		String textForAssertion = excelReader.getStringData("UpdateAddress", 52, 4);
+		String textForAssertion = excelReader.getStringData("UpdateAddress", 47, 4);
 		myAccountPage.clickOnMyAddressesButton();
 		myAddressesPage.clickOnUpdateButton();
 		yourAddressesPage.getFutureReferenceAddressField().clear();

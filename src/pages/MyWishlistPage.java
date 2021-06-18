@@ -21,43 +21,29 @@ public class MyWishlistPage {
 		return driver.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/div/div[1]/table/tbody/tr[2]/td[2]"));
 	}
 
-
-
 	public WebElement getSecondWishlist() {
 		return driver.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/div/div[1]/table/tbody/tr[2]/td[1]"));
 	}
-
-
 
 	public WebElement getNumberOfItemsFirstWishlist() {
 		return driver.findElement(By.cssSelector(".bold.align_center"));
 	}
 
-
-
 	public WebElement getDeleteIcon() {
 		return driver.findElement(By.className("icon-remove"));
 	}
-
-
 
 	public WebElement getFirstWishlist() {
 		return driver.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div[2]/div/div[1]/table/tbody/tr[1]/td[1]/a"));
 	}
 
-
-
 	public WebElement getSaveWishlistButton() {
 		return driver.findElement(By.id("submitWishlist"));
 	}
 
-
-
 	public WebElement getWishlistNameFiled() {
 		return driver.findElement(By.id("name"));
 	}
-
-
 
 	public MyWishlistPage(WebDriver driver) {
 		super();
@@ -95,6 +81,6 @@ public class MyWishlistPage {
 		return this.getNumberOfItemsSecondWishlist().getText();
 	}
 	public int numberOfElementsWishlists () {
-		return driver.findElements(By.xpath("//*[@id=\"block-history\"]/table")).size();
+		return driver.findElements(By.xpath("//*[@id=\"wishlist_35531\"]/td[6]/a/i")).size();
 	}
 }
